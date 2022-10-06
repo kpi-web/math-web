@@ -8,7 +8,7 @@ interface HeaderItem {
 
 const HeaderItemContainer = styled.div`
   width: fit-content;
-  color: white;
+  color: #ef7f59;
   transition: 0.5s;
 
   &:hover {

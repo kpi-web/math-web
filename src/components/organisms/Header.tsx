@@ -3,11 +3,14 @@ import styled from "styled-components";
 import HeaderItem from "../molecules/HeaderItem";
 
 const HeaderStyled = styled.div`
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   width: 70%;
-  background-color: beige;
   flex-grow: 1;
-  padding: 20px;
   justify-content: space-around;
   
 `

@@ -39,6 +39,9 @@ interface FlexProps {
     justifySelf?: string,
     gap?: string,
     whiteSpace?: string,
+    borderRadius?: string,
+    borderBottom?: string,
+
 }
 
 const BlockStyled =  styled.div<FlexProps>`
@@ -76,6 +79,8 @@ const BlockStyled =  styled.div<FlexProps>`
   text-align: ${props => props.textAlign};
   gap: ${props => props.gap};
   white-space: ${props => props.whiteSpace};
+  border-bottom: ${props => props.borderBottom};
+  border-radius: ${props => props.borderRadius};
 `;
 
 

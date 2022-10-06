@@ -2,6 +2,7 @@ import React from 'react';
 import Flex from "../atoms/Flex";
 import Header from "../organisms/Header";
 import FirstMainScreen from "../organisms/FirstMainScreen";
+import SecondMainScreen from "../organisms/SecondMainScreen";
 
 const Main = () => {
     return (
@@ -12,10 +13,7 @@ const Main = () => {
         >
             <Header />
             <FirstMainScreen />
-            <Flex
-                height={'800px'}
-            >
-            </Flex>
+            <SecondMainScreen />
             <Flex
             >
                 sd

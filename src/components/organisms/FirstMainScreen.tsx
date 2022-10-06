@@ -14,7 +14,6 @@ const FirstMainScreen = () => {
             width={'100%'}
         >
             <Flex
-
                 justifyContent={'center'}
                 alignItems={'center'}
                 width={'50%'}

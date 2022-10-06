@@ -12,7 +12,6 @@ const HeaderStyled = styled.div`
   width: 70%;
   flex-grow: 1;
   justify-content: space-around;
-  
 `
 
 const titles = ["Головна", "Про нас", "Вартість", "Навчання", "Контакти", "Особистий кабінет"]

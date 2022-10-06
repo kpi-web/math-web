@@ -4,6 +4,7 @@ import Header from "../organisms/Header";
 import FirstMainScreen from "../organisms/FirstMainScreen";
 import SecondMainScreen from "../organisms/SecondMainScreen";
 import ThirdMainScreen from "../organisms/ThirdMainScreen";
+import Footer from "../organisms/Footer";
 
 const Main = () => {
     return (
@@ -17,7 +18,7 @@ const Main = () => {
             <SecondMainScreen />
             <ThirdMainScreen />
 
-
+            <Footer />
         </Flex>
     );
 };

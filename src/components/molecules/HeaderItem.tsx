@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Text from "../atoms/Text";
 import styled from "styled-components";
+import HeaderDropdown from "./HeaderDropdown";
+import Flex from "../atoms/Flex";
+import {dropDownItemsConfig} from "../../types";
 
-interface HeaderItem {
-    title: string,
-}
 
 const HeaderItemContainer = styled.div`
   width: fit-content;
@@ -17,16 +17,35 @@ const HeaderItemContainer = styled.div`
     transition: 0.5s;
   }
 `
-
+interface HeaderItem {
+    title: string,
+    onClick: Function,
+    dropdownConfig?: dropDownItemsConfig[]
+}
 const HeaderItem = (
     {
-        title
+        title,
+        dropdownConfig
     }: HeaderItem
 ) => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(true)
     return (
-        <HeaderItemContainer>
-            <Text>{title}</Text>
-        </HeaderItemContainer>
+        <Flex
+            flexDirection={'column'}
+        >
+            <HeaderItemContainer onClick={(e: any) => {
+                e.stopPropagation()
+                setIsDropdownOpen(!isDropdownOpen)
+            }}>
+                <Text>{title}</Text>
+            </HeaderItemContainer>
+            {
+                dropdownConfig && isDropdownOpen &&
+                <HeaderDropdown dropDownVisibilityHandler={setIsDropdownOpen} dropdownConfig={dropdownConfig} />
+            }
+        </Flex>
+
+
     );
 };
 

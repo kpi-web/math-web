@@ -14,13 +14,49 @@ const HeaderStyled = styled.div`
   justify-content: space-around;
 `
 
-const titles = ["Головна", "Про нас", "Вартість", "Навчання", "Контакти", "Особистий кабінет"]
+const headerItems = [
+    {
+        title: 'Головна',
+        onClickHandler: () => {}
+    },
+    {
+        title: 'Про нас',
+        onClickHandler: () => {}
+    },
+    {
+        title: 'Вартість',
+        onClickHandler: () => {}
+    },
+    {
+        title: 'Навчання',
+        onClickHandler: () => {}
+    },
+    {
+        title: 'Контакти',
+        onClickHandler: () => {}
+    },
+    {
+        title: 'Особистий кабінет',
+        onClickHandler: () => console.log('kek'),
+        dropdownConfig: [
+            {
+                title: 'Вхід',
+                action: () => console.log("Вхід"),
+            },
+            {
+                title: 'Реєстрація',
+                action: () => console.log("Реєстрація")
+            }
+        ]
+    }
+]
 
 const Header = () => {
     return (
         <HeaderStyled>
             {
-                titles.map((title, index) => <HeaderItem title={title} key={index}/>)
+                headerItems.map(({title, onClickHandler, dropdownConfig}, index) =>
+                    <HeaderItem dropdownConfig={dropdownConfig} onClick={onClickHandler} title={title} key={index}/>)
             }
         </HeaderStyled>
     );

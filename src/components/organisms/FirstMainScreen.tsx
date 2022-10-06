@@ -10,7 +10,7 @@ const FirstMainScreen = () => {
             backgroundColor={'#2e325d'}
             justifyContent={'flex-start'}
             alignItems={'center'}
-            height={'500px'}
+            height={'1000px'}
             width={'100%'}
         >
             <Flex

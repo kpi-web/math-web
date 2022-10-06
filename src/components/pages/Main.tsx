@@ -3,6 +3,7 @@ import Flex from "../atoms/Flex";
 import Header from "../organisms/Header";
 import FirstMainScreen from "../organisms/FirstMainScreen";
 import SecondMainScreen from "../organisms/SecondMainScreen";
+import ThirdMainScreen from "../organisms/ThirdMainScreen";
 
 const Main = () => {
     return (
@@ -14,10 +15,7 @@ const Main = () => {
             <Header />
             <FirstMainScreen />
             <SecondMainScreen />
-            <Flex
-            >
-                sd
-            </Flex>
+            <ThirdMainScreen />
 
 
         </Flex>

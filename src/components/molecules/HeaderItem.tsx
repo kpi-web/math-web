@@ -28,7 +28,7 @@ const HeaderItem = (
         dropdownConfig
     }: HeaderItem
 ) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(true)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     return (
         <Flex
             flexDirection={'column'}

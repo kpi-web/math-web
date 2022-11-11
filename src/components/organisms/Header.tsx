@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 import HeaderItem from "../molecules/HeaderItem";
+import Flex from "../atoms/Flex";
+import app from "../../firebase";
+import { signOut, getAuth } from "firebase/auth";
 
 const HeaderStyled = styled.div`
   position: fixed;
@@ -14,51 +17,63 @@ const HeaderStyled = styled.div`
   justify-content: space-around;
 `
 
-const headerItems = [
-    {
-        title: 'Головна',
-        onClickHandler: () => {}
-    },
-    {
-        title: 'Про нас',
-        onClickHandler: () => {}
-    },
-    {
-        title: 'Вартість',
-        onClickHandler: () => {}
-    },
-    {
-        title: 'Навчання',
-        onClickHandler: () => {}
-    },
-    {
-        title: 'Контакти',
-        onClickHandler: () => {}
-    },
-    {
-        title: 'Особистий кабінет',
-        onClickHandler: () => console.log('kek'),
-        dropdownConfig: [
-            {
-                title: 'Вхід',
-                action: () => console.log("Вхід"),
-            },
-            {
-                title: 'Реєстрація',
-                action: () => console.log("Реєстрація")
-            }
-        ]
-    }
-]
 
-const Header = () => {
+
+const Header = ({name}: {name: string}) => {
+
+    const auth = getAuth(app)
+
+    const out = async () => {
+        try{
+            await signOut(auth)
+        }
+        catch (e: any){
+            console.log(e.message)
+        }
+    }
+    const headerItems = [
+        {
+            title: 'Головна',
+            onClickHandler: () => {}
+        },
+        {
+            title: 'Про нас',
+            onClickHandler: () => {}
+        },
+        {
+            title: 'Вартість',
+            onClickHandler: () => {}
+        },
+        {
+            title: 'Навчання',
+            onClickHandler: () => {}
+        },
+        {
+            title: 'Контакти',
+            onClickHandler: () => {}
+        },
+        {
+            title: 'Особистий кабінет',
+            onClickHandler: () => console.log('kek'),
+            dropdownConfig: [
+                {
+                    title: 'Вихід',
+                    action: () => out(),
+                }
+            ]
+        },
+
+    ]
     return (
-        <HeaderStyled>
-            {
-                headerItems.map(({title, onClickHandler, dropdownConfig}, index) =>
-                    <HeaderItem dropdownConfig={dropdownConfig} onClick={onClickHandler} title={title} key={index}/>)
-            }
-        </HeaderStyled>
+        <Flex>
+            <HeaderStyled>
+                {
+                    headerItems.concat([{title: name, onClickHandler: () => {}}]).map(({title, onClickHandler, dropdownConfig}, index) =>
+                        <HeaderItem dropdownConfig={dropdownConfig} onClick={onClickHandler} title={title} key={index}/>)
+                }
+
+            </HeaderStyled>
+        </Flex>
 
     );
 };

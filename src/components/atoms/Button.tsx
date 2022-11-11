@@ -15,9 +15,9 @@ const ButtonStyled = styled.button<ButtonStyledProps>`
   border-radius: 5px;
 `
 
-const Button = ({children, ...props}: ButtonProps) => {
+const Button = ({children, onClickHandler,  ...props}: ButtonProps) => {
     return (
-        <ButtonStyled {...props}>
+        <ButtonStyled onClick={() => onClickHandler!()} {...props}>
             {children}
         </ButtonStyled>
     );

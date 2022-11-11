@@ -59,6 +59,7 @@ const Header = () => {
                     <HeaderItem dropdownConfig={dropdownConfig} onClick={onClickHandler} title={title} key={index}/>)
             }
         </HeaderStyled>
+
     );
 };
 

@@ -8,5 +8,6 @@ export interface SignInUp {
     setPassword: Function
     confirmPassword?: string,
     setConfirmPassword?: Function,
+    handler: Function,
 }
 
